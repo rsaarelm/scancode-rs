@@ -1,0 +1,9 @@
+[package]
+name = "scancode"
+version = "0.1.0"
+authors = ["Risto Saarelma <risto.saarelma@iki.fi>"]
+description = "Keyboard hardware scancode converter"
+repository = "https://github.com/rsaarelm/scancode-rs"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
