@@ -2,7 +2,7 @@ use Scancode;
 use Scancode::*;
 
 /// Keyboard scancode map for Microsoft Windows.
-pub static MAP: [Option<Scancode>; 89] = [None,
+pub static MAP: [Option<Scancode>; 94] = [None,
                                           Some(Escape),
                                           Some(Num1),
                                           Some(Num2),
@@ -57,7 +57,7 @@ pub static MAP: [Option<Scancode>; 89] = [None,
                                           Some(Period),
                                           Some(Slash),
                                           Some(RightShift),
-                                          Some(PadMultiply),
+                                          Some(PadMultiply), // Also PrintScreen
                                           Some(LeftAlt),
                                           Some(Space),
                                           Some(CapsLock),
@@ -73,21 +73,26 @@ pub static MAP: [Option<Scancode>; 89] = [None,
                                           Some(F10),
                                           Some(NumLock),
                                           Some(ScrollLock),
-                                          Some(Pad7),
-                                          Some(Pad8),
-                                          Some(Pad9),
+                                          Some(Home), // Also Pad7
+                                          Some(Up), // Also Pad8
+                                          Some(PageUp), // Also Pad9
                                           Some(PadMinus),
-                                          Some(Pad4),
+                                          Some(Left), // Also Pad4
                                           Some(Pad5),
-                                          Some(Pad6),
+                                          Some(Right), // Also Pad6
                                           Some(PadPlus),
-                                          Some(Pad1),
-                                          Some(Pad2),
-                                          Some(Pad3),
-                                          Some(Pad0),
-                                          Some(PadDecimal),
+                                          Some(End), // Also Pad1
+                                          Some(Down), // Also Pad2
+                                          Some(PageDown), // Also Pad3
+                                          Some(Insert), // Also Pad0
+                                          Some(Delete), // Also PadDecimal
                                           None,
                                           None,
-                                          None, // This is the 102th key in intl keyboards.
+                                          Some(NonUsBackslash),
                                           Some(F11),
-                                          Some(F12)];
+                                          Some(F12),
+                                          Some(Pause),
+                                          None,
+                                          Some(LeftGui),
+                                          Some(RightGui),
+                                          Some(Menu)];
