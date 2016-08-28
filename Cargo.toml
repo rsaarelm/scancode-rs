@@ -7,3 +7,6 @@ repository = "https://github.com/rsaarelm/scancode-rs"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
+
+[dev-dependencies]
+glutin = "0.6"
