@@ -100,6 +100,7 @@ pub enum Scancode {
     Pad0,
     PadDecimal,
     NonUsBackslash = 100,
+    PadEquals = 103,
     Menu = 118,
     Mute = 127,
     VolumeUp,
