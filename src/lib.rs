@@ -1,6 +1,13 @@
+#[macro_use]
+extern crate enum_primitive;
+
+enum_from_primitive! {
 /// Default values for hardware keyboard keys.
 ///
 /// After USB HID Usage Tables document at http://www.usb.org/developers/hidpage/Hut1_12v2.pdf
+///
+/// You can use the `FromPrimitive` trait to convert from an USB HID integer into a `Scancode` enum
+/// value.
 #[derive(Copy, Clone, Eq, PartialEq, Debug)]
 pub enum Scancode {
     A = 4,
@@ -114,6 +121,7 @@ pub enum Scancode {
     RightShift,
     RightAlt,
     RightGui,
+}
 }
 
 #[cfg(target_os = "macos")]
