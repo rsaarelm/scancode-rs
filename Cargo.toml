@@ -11,5 +11,5 @@ license = "MIT OR Apache-2.0"
 enum_primitive = "0.1"
 
 [dev-dependencies]
-glutin = "0.7"
+glutin = "0.8"
 num = "0.1"
