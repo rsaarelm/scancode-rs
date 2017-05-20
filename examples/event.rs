@@ -6,17 +6,19 @@ use scancode::Scancode;
 
 fn main() {
     let mut errors = BTreeMap::new();
-    let window = glutin::WindowBuilder::new().build().unwrap();
+    let events_loop = glutin::EventsLoop::new();
+    let window = glutin::WindowBuilder::new().build(&events_loop).unwrap();
     let _ = unsafe { window.make_current() };
     // println!("Pixel format of the window: {:?}", window.get_pixel_format());
     // let context = support::load(&window);
 
-    for event in window.wait_events() {
-        // context.draw_frame((0.0, 1.0, 0.0, 1.0));
+    events_loop.run_forever(|event| {
         let _ = window.swap_buffers();
 
+        let glutin::Event::WindowEvent { event, .. } = event;
+
         match event {
-            glutin::Event::KeyboardInput(state, scancode, vk) => {
+            glutin::WindowEvent::KeyboardInput(state, scancode, vk, _) => {
                 if state == glutin::ElementState::Pressed {
                     print!("pressed")
                 } else {
@@ -37,10 +39,10 @@ fn main() {
                     println!(" (virtual keycode UNKNOWN)");
                 }
             }
-            glutin::Event::Closed => break,
+            glutin::WindowEvent::Closed => events_loop.interrupt(),
             _ => (),
         }
-    }
+    });
 
     if !errors.is_empty() {
         println!("Unhandled scancodes:");
